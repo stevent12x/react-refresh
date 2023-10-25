@@ -11,7 +11,11 @@ const App = () => {
   ]);
 
   const addNewGoalHandler = (newGoal) => {
-    setCourseGoals(courseGoals.concat(newGoal))
+    // This approach works, but is not optimal
+    // setCourseGoals(courseGoals.concat(newGoal))
+
+    // If the state update depends on previous state data
+    setCourseGoals((prevCourseGoals) => prevCourseGoals.concat(newGoal))
   }
 
   return <div className='course-goals'>
